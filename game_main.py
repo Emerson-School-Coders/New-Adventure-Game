@@ -224,7 +224,6 @@ if __name__=="__main__":
                 print("(M)ain Menu")
                 print("Play the Game!")
                 print("(P)lay!")
-                print("Play (O)ld Game")
                 option="NONE"
                 option=input(">")
                 clear()
