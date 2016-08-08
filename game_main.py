@@ -61,8 +61,15 @@ if __name__=="__main__":
             items=save_array_items
             print("items="+str(save_array_items))
             print("Game loaded from save!")
+            continue=open("continue.agsl","w")
+            continue.write(1)
+            continue.close()
+            runpy.run_path("version-"+save_array[8]+".py")
         else:
             do_menu=1
+            continue=open("continue.agsl","w")
+            continue.write(0)
+            continue.close()
     else:
         do_menu=1
     if do_menu==1:
@@ -226,24 +233,21 @@ if __name__=="__main__":
                     submenu=""
                 elif option=="p" or option=="P":
                     submenu="Play>Choose Version>"
-                elif option=="o" or option=="O":
-                    runpy.run_path("old_game.py")
-                    print("That's all that the old game was. It was nice but this will be better.")
-                    main_menu=1
-                    submenu=""
             elif submenu=="Play>Choose Version>":
                 print("(M)ain Menu")
-                print("(0.0.1) Oldest Version")
-                print("(0.0.2)")
+                print("(0.0.1v) Vanilla")
+                print("(O)ld Game")
                 option="NONE"
                 option=input(">")
                 clear()
                 if option=="m" or option=="M":
                     main_menu=1
                     submenu=""
-                elif option=="0.0.1":
-                    print("Playing version 0.0.1")
-                    runpy.run_path("version0.0.1.py")
-                elif option=="0.0.2":
-                    print("Playing version 0.0.2")
-                    runpy.run_path("version0.0.2.py")
+                elif option=="0.0.1v":
+                    print("Playing version 0.0.1(vanilla)")
+                    runpy.run_path("version-0.0.1v.py")
+                elif option=="o" or option=="O":
+                    runpy.run_path("old_game.py")
+                    print("That's all that the old game was. It was nice but this will be better.")
+                    main_menu=1
+                    submenu=""
