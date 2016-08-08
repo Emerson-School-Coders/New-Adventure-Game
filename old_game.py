@@ -1,3 +1,8 @@
+//most of this code is unchanged from the original state.
+//no bug fixes
+//however, if you want the very oldest game, it's buried in commits.
+//the first version isn't even on github
+//if you want to find it, you'll have to contact me
 lives=5
 gold=10
 damagem=1
